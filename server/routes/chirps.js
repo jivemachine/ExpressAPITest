@@ -11,3 +11,8 @@ router.get('/:id?', (req, res) => {
         res.send(chirpsStore.GetChirps());
     }
 });
+
+router.post('/', (req, res) => {
+    chirpsStore.CreateChirp(req.body);
+    res.sendStatus(200);
+});
